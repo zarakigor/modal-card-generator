@@ -1,19 +1,18 @@
+import { useState } from "react";
 import styles from "./gallery.module.scss";
 import Image from "next/future/image";
 
-// import modal1 from "/public/images/modals_preview/modal1.png";
-// import modal2 from "/public/images/modals_preview/modal2.png";
-// import modal3 from "/public/images/modals_preview/modal3.png";
-// import modal4 from "/public/images/modals_preview/modal4.png";
-
-import { usePagination, DOTS } from "../hooks/usePagination";
-
 function Gallery() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [modalsPerPage, setModalsPerPage] = useState(12);
+  const indexOfLastModal = currentPage * modalsPerPage;
+  const indexOfFirstModal = indexOfLastModal - modalsPerPage;
+
   function displayTemplates() {
     let imageArr = [];
-    for (let i = 1; i < 13; i++) {
+    for (let i = 1; i <= 36; i++) {
       imageArr.push(
-        <div>
+        <div key={i}>
           <Image
             src={`/images/modals_preview/modal${i}.png`}
             alt={`preview of modal number ${i}`}
@@ -25,10 +24,40 @@ function Gallery() {
         </div>
       );
     }
-    return imageArr;
+    const currentModals = imageArr.slice(indexOfFirstModal, indexOfLastModal);
+
+    return <div className={styles.gallery}>{currentModals}</div>;
   }
 
-  return <div className={styles.gallery}>{displayTemplates()}</div>;
+  function changePage(event) {
+    console.log(event.target.value);
+    setCurrentPage(event.target.value);
+  }
+
+  return (
+    <div>
+      {displayTemplates()}
+      <div className={styles.btn__group}>
+        <button value="1" onClick={(e) => changePage(e)}>
+          1
+        </button>
+        <button value="2" onClick={(e) => changePage(e)}>
+          2
+        </button>
+        <button value="3" onClick={(e) => changePage(e)}>
+          3
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default Gallery;
+
+{
+  /* <Pagination
+          nPages={nPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        /> */
+}
