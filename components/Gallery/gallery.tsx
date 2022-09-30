@@ -38,13 +38,25 @@ function Gallery() {
     <div>
       {displayTemplates()}
       <div className={styles.btn__group}>
-        <button value="1" onClick={(e) => changePage(e)}>
+        <button
+          value="1"
+          onClick={(e) => changePage(e)}
+          className={currentPage == 1 ? styles.active : styles.inactive}
+        >
           1
         </button>
-        <button value="2" onClick={(e) => changePage(e)}>
+        <button
+          value="2"
+          onClick={(e) => changePage(e)}
+          className={currentPage == 2 ? styles.active : styles.inactive}
+        >
           2
         </button>
-        <button value="3" onClick={(e) => changePage(e)}>
+        <button
+          value="3"
+          onClick={(e) => changePage(e)}
+          className={currentPage == 3 ? styles.active : styles.inactive}
+        >
           3
         </button>
       </div>
