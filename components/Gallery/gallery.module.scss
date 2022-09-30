@@ -1,0 +1,17 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
+  div {
+    background-color: #eaeaea;
+    width: 276px;
+    height: 210px;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

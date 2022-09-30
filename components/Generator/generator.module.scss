@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.generator {
+  font-family: "Poppins", sans-serif;
+  @apply mt-24 mx-40;
+
+  h1 {
+    @apply mb-4 text-4xl font-semibold tracking-tighter;
+  }
+}
