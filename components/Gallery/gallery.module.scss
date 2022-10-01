@@ -1,30 +1,38 @@
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+@tailwind components;
 
-  div {
+@layer components {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    div {
+      background-color: #f5f5f5;
+      width: 276px;
+      height: 210px;
+      transition: all 0.4s ease-out;
+      @apply flex justify-center items-center rounded-xl border-gray-200 border border-solid;
+    }
+    div:hover {
+      background: rgba(125, 74, 234, 0.6);
+    }
+  }
+
+  .btn__group {
     background-color: #f5f5f5;
-    width: 276px;
-    height: 210px;
-    @apply flex justify-center items-center rounded-xl border-gray-200 border border-solid;
-  }
-}
+    width: 11rem;
+    @apply mt-8 text-sm rounded-xl flex justify-around;
 
-.btn__group {
-  background-color: #f5f5f5;
-  width: 11rem;
-  @apply mt-8 text-sm rounded-xl flex justify-around;
+    button {
+      @apply px-5 py-4 m-1 rounded-xl font-semibold;
+    }
 
-  button {
-    @apply px-5 py-4 m-1 rounded-xl font-semibold;
-  }
+    .active {
+      @apply bg-white;
+    }
 
-  .active {
-    @apply bg-white;
-  }
-
-  .inactive {
-    color: #777777;
+    .inactive {
+      color: #777777;
+    }
   }
 }
