@@ -1,48 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@tailwind components;
 
-.footer {
-  margin: 20rem 10rem 5rem; /* değiştir*/
-  font-family: "Poppins", sans-serif;
-  @apply text-center;
+@layer components {
+  .footer {
+    margin: 20rem 10rem 5rem; /* değiştir*/
+    font-family: "Poppins", sans-serif;
+    @apply text-center;
 
-  h1 {
-    @apply text-4xl font-semibold  tracking-tighter mb-12 mt-28;
-  }
+    h1 {
+      @apply text-4xl font-semibold  tracking-tighter mb-12 mt-28;
+    }
 
-  .container__top {
-    @apply flex;
+    .container__top {
+      @apply flex;
 
-    div {
-      @apply bg-gray-100 pt-12 pb-14 px-20 mx-4  rounded-xl;
+      div {
+        @apply bg-gray-100 pt-12 pb-14 px-20 mx-4  rounded-xl;
+
+        h3 {
+          @apply text-lg font-semibold mt-5 mb-3;
+        }
+
+        p {
+          @apply text-sm tracking-tight;
+        }
+      }
+    }
+
+    .container__bottom {
+      @apply flex justify-between mt-16 mb-20;
+
+      div {
+        @apply flex flex-col items-center w-1/5;
+      }
 
       h3 {
-        @apply text-lg font-semibold mt-5 mb-3;
+        @apply font-semibold text-lg mt-7 mb-2;
       }
 
       p {
         @apply text-sm tracking-tight;
       }
-    }
-  }
 
-  .container__bottom {
-    @apply flex justify-between mt-16 mb-20;
-
-    div {
-      @apply flex flex-col items-center w-1/5;
-    }
-
-    h3 {
-      @apply font-semibold text-lg mt-7 mb-2;
-    }
-
-    p {
-      @apply text-sm tracking-tight;
-    }
-
-    .footer_icon {
-      padding: 30px;
-      @apply bg-purple text-white h-32 w-32 rounded-full;
+      .footer_icon {
+        padding: 30px;
+        @apply bg-primary_purple text-white h-32 w-32 rounded-full;
+      }
     }
   }
 }
