@@ -6,7 +6,7 @@ module.exports = {
     "./context/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: { colors: { purple: "#7D4AEA" } },
+    extend: { colors: { primary_purple: "#7D4AEA" } },
   },
   plugins: [require("@tailwindcss/forms")],
 };
