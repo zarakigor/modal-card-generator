@@ -2,6 +2,11 @@ import styles from "./generator.module.scss";
 import Image from "next/future/image";
 import Gallery from "../Gallery/gallery";
 
+import Modal1 from "../ModalSamples/Modal1/modal1";
+import Modal2 from "../ModalSamples/Modal2/modal2";
+import Modal4 from "../ModalSamples/Modal4/modal4";
+import Modal5 from "../ModalSamples/Modal5/modal5";
+
 function Generator() {
   return (
     <div className={styles.generator}>
@@ -12,6 +17,8 @@ function Generator() {
         efficient email list!
       </p>
       <Gallery />
+
+      <Modal5 />
     </div>
   );
 }
