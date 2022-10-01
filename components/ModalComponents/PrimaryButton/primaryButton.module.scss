@@ -1,0 +1,8 @@
+@tailwind components;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap");
+
+@layer components {
+  .btn {
+    @apply font-medium rounded-xl text-white px-12 py-3;
+  }
+}
