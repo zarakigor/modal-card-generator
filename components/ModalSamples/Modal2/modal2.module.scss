@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .modal {
+    width: 480px;
+    height: 600px;
+    background-color: gold;
+    @apply flex flex-col items-center  text-center rounded-xl;
+  }
+}
