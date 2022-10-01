@@ -1,22 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap");
+@tailwind components;
+@tailwind utilities;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.03em;
-
-  div,
-  ul {
+@layer components {
+  .navbar {
     display: flex;
-    align-items: center;
-  }
-  ul > li,
-  div > button {
-    @apply mr-5;
-  }
-  .btn__primary {
-    box-shadow: 0px 3px 7px 1px rgba(125, 74, 234, 0.2);
-    @apply bg-purple text-white rounded-xl px-5 py-2;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.03em;
+
+    div,
+    ul {
+      display: flex;
+      align-items: center;
+    }
+    ul > li,
+    div > button {
+      @apply mr-5 cursor-pointer;
+    }
+    .btn__primary {
+      box-shadow: 0px 3px 7px 1px rgba(125, 74, 234, 0.2);
+      @apply bg-primary_purple text-white rounded-xl px-5 py-2;
+    }
   }
 }
