@@ -12,15 +12,20 @@ function Gallery() {
     let imageArr = [];
     for (let i = 1; i <= 36; i++) {
       imageArr.push(
-        <div key={i}>
+        <div key={i} className="group">
           <Image
             src={`/images/modals_preview/modal${i}.png`}
             alt={`preview of modal number ${i}`}
             width="0"
             height="0"
             sizes="134vw"
-            className="w-auto h-auto"
+            className="w-auto h-auto z-10"
           />
+          <div className="hidden absolute group-hover:z-20">
+            <button className="text-purple-600 tracking-tight font-semibold hidden group-hover:block bg-white rounded-xl z-30 absolute px-6 py-4">
+              Select template
+            </button>
+          </div>
         </div>
       );
     }
