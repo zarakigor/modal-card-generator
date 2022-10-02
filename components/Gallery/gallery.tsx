@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./gallery.module.scss";
 import Image from "next/future/image";
+import { Context } from "../../context/Context";
 
 function Gallery() {
   const [currentPage, setCurrentPage] = useState(1);
   const [modalsPerPage, setModalsPerPage] = useState(12);
   const indexOfLastModal = currentPage * modalsPerPage;
   const indexOfFirstModal = indexOfLastModal - modalsPerPage;
+
+  const { changeModalIndex } = useContext(Context);
 
   function displayTemplates() {
     let imageArr = [];
@@ -22,7 +25,11 @@ function Gallery() {
             className="w-auto h-auto z-10"
           />
           <div className="hidden absolute group-hover:z-20">
-            <button className="text-purple-600 tracking-tight font-semibold hidden group-hover:block bg-white rounded-xl z-30 absolute px-6 py-4">
+            <button
+              value={`${i}`}
+              className="text-purple-600 tracking-tight font-semibold hidden group-hover:block bg-white rounded-xl z-30 absolute px-6 py-4"
+              onClick={() => changeModalIndex(`${i}`)}
+            >
               Select template
             </button>
           </div>
