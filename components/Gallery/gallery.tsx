@@ -42,7 +42,6 @@ function Gallery() {
   }
 
   function changePage(event) {
-    console.log(event.target.value);
     setCurrentPage(event.target.value);
   }
 
@@ -77,11 +76,3 @@ function Gallery() {
 }
 
 export default Gallery;
-
-{
-  /* <Pagination
-          nPages={nPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        /> */
-}
