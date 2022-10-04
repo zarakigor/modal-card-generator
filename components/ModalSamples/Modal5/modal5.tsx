@@ -1,5 +1,4 @@
 import styles from "./modal5.module.scss";
-import Image from "next/future/image";
 import { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 
@@ -7,7 +6,6 @@ import PrimaryButton from "../../ModalComponents/PrimaryButton/primaryButton";
 
 function Modal5() {
   const { contentOfModal5, setContentOfModal5 } = useContext(Context);
-  console.log(contentOfModal5);
 
   return (
     <div className={styles.modal}>
