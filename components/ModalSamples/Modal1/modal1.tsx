@@ -21,6 +21,7 @@ function Modal1() {
         type="input"
         className="form-input border-gray-300 rounded-lg w-full"
         value={contentsOfModals.Modal1.content3}
+        readOnly
       />
       <div className="flex justify-between w-full mt-8">
         <SecondaryButton
