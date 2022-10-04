@@ -46,11 +46,16 @@ function ContextProvider({ children }) {
     },
   });
 
+  const [chosenModalSize, setChosenModalSize] = useState("Medium");
+  const [chosenModalPosition, setChosenModalPosition] = useState(
+    "absolute self-center"
+  );
+
   function changeModalIndex(index) {
     setIndexOfChosenModal(index);
   }
 
-  function handleChange(e, index) {
+  function changeChosenModalContents(e, index) {
     let updatedModal = contentsOfModals[`Modal${index}`];
 
     setContentsOfModals((prevState) => {
@@ -63,14 +68,27 @@ function ContextProvider({ children }) {
     });
   }
 
+  function changeChosenModalSize(e) {
+    setChosenModalSize(e.target.value);
+  }
+
+  function changeChosenModalPosition(e) {
+    console.log(e.target.name);
+    setChosenModalPosition(e.target.name);
+  }
+
   return (
     <Context.Provider
       value={{
         indexOfChosenModal,
         changeModalIndex,
-        handleChange,
+        changeChosenModalContents,
         contentsOfModals,
         setContentsOfModals,
+        chosenModalSize,
+        changeChosenModalSize,
+        chosenModalPosition,
+        changeChosenModalPosition,
       }}
     >
       {children}
