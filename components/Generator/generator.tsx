@@ -10,9 +10,11 @@ import Appearance from "../Appearance/appearance";
 function Generator() {
   const {
     indexOfChosenModal,
-    handleChange,
+    changeChosenModalContents,
     contentsOfModals,
     setContentsOfModals,
+    changeChosenModalPosition,
+    chosenModalPosition,
   } = useContext(Context);
 
   function loadComponent(index: string) {
@@ -33,10 +35,10 @@ function Generator() {
         <input
           key={contentName}
           type="text"
-          className="form-input"
+          className="form-input mt-4 rounded-lg border-gray-300 "
           name={contentName}
           value={contentValue}
-          onChange={(e) => handleChange(e, indexOfChosenModal)}
+          onChange={(e) => changeChosenModalContents(e, indexOfChosenModal)}
         />
       );
     }
@@ -51,21 +53,25 @@ function Generator() {
         using thebest online tools. Popupsmart is ready to help you build an
         efficient email list!
       </p>
-
       <h3>
         <span>1</span> Choose your template
       </h3>
       <Gallery />
+
       <div className="flex justify-between mt-24">
-        <div>
+        <div className={styles.left_col}>
           <Appearance />
-          <h3 className="mb-7">
+          <h3 className="mt-24 mb-7">
             <span>3</span> Content
           </h3>
           <p>Edit your content</p>
           <div className="flex flex-col">{InputElements()}</div>
         </div>
-        <PreviewModal />
+        <div className="flex justify-center w-3/5 border-solid border-2 border-red-600 relative">
+          <div className={chosenModalPosition}>
+            <PreviewModal />
+          </div>
+        </div>
       </div>
     </div>
   );
