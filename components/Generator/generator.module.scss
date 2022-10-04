@@ -17,5 +17,10 @@
         @apply bg-gray-200  w-9 h-9 rounded-full flex justify-center items-center mr-4;
       }
     }
+    .left_col {
+      p {
+        @apply mt-8;
+      }
+    }
   }
 }
