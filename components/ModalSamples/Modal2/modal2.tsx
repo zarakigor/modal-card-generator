@@ -7,7 +7,7 @@ import PrimaryButton from "../../ModalComponents/PrimaryButton/primaryButton";
 import SecondaryButton from "../../ModalComponents/SecondaryButton/secondaryButton";
 
 function Modal2() {
-  const { contentOfModal2, setContentOfModal2 } = useContext(Context);
+  const { contentsOfModals } = useContext(Context);
   return (
     <div className={styles.modal}>
       <Image
@@ -20,19 +20,22 @@ function Modal2() {
       />
       <div>
         <h2 className="text-3xl font-bold mt-7 mb-5">
-          {contentOfModal2.content1}
+          {contentsOfModals.Modal2.content1}
         </h2>
-        <p className="text-xl mb-8">{contentOfModal2.content2}</p>
+        <p className="text-xl mb-8">{contentsOfModals.Modal2.content2}</p>
 
         <div className="  w-full mt-8">
           <PrimaryButton
             value={{
-              text: `${contentOfModal2.content3}`,
+              text: `${contentsOfModals.Modal2.content3}`,
               className: "w-full mb-4",
             }}
           />
           <SecondaryButton
-            value={{ text: `${contentOfModal2.content4}`, className: "w-full" }}
+            value={{
+              text: `${contentsOfModals.Modal2.content4}`,
+              className: "w-full",
+            }}
           />
         </div>
       </div>
