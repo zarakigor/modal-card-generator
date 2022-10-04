@@ -13,7 +13,7 @@
     h3 {
       @apply text-lg font-semibold tracking-tight flex items-center mb-8;
 
-      span {
+      span:first-of-type {
         @apply bg-gray-200  w-9 h-9 rounded-full flex justify-center items-center mr-4;
       }
     }
