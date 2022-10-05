@@ -187,19 +187,19 @@ function Appearance() {
         <button
           name="black"
           className="bg-black"
-          value="bg-black"
+          value="bg-black text-white"
           onClick={(e) => changeChosenModalColor(e)}
         ></button>
         <button
           name="orange"
           className="bg-primary_orange"
-          value="bg-primary_orange"
+          value="bg-primary_orange text-white"
           onClick={(e) => changeChosenModalColor(e)}
         ></button>
         <button
           name="purple"
           className="bg-primary_purple"
-          value="bg-primary_purple"
+          value="bg-primary_purple text-white"
           onClick={(e) => changeChosenModalColor(e)}
         ></button>
         <button
