@@ -5,6 +5,11 @@ const Context = createContext(null);
 
 function ContextProvider({ children }) {
   const [indexOfChosenModal, setIndexOfChosenModal] = useState(1);
+  const [chosenModalSize, setChosenModalSize] = useState("scale-100");
+  const [chosenModalPosition, setChosenModalPosition] = useState(
+    "absolute self-center"
+  );
+  const [chosenModalColor, setChosenModalColor] = useState("bg-primary_orange");
 
   const [contentsOfModals, setContentsOfModals] = useState({
     Modal1: {
@@ -46,11 +51,6 @@ function ContextProvider({ children }) {
     },
   });
 
-  const [chosenModalSize, setChosenModalSize] = useState("Medium");
-  const [chosenModalPosition, setChosenModalPosition] = useState(
-    "absolute self-center"
-  );
-
   function changeModalIndex(index) {
     setIndexOfChosenModal(index);
   }
@@ -73,8 +73,11 @@ function ContextProvider({ children }) {
   }
 
   function changeChosenModalPosition(e) {
-    console.log(e.target.name);
-    setChosenModalPosition(e.target.name);
+    setChosenModalPosition(e.target.value);
+  }
+
+  function changeChosenModalColor(e) {
+    setChosenModalColor(e.target.value);
   }
 
   return (
@@ -89,6 +92,8 @@ function ContextProvider({ children }) {
         changeChosenModalSize,
         chosenModalPosition,
         changeChosenModalPosition,
+        chosenModalColor,
+        changeChosenModalColor,
       }}
     >
       {children}
