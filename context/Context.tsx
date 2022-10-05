@@ -8,7 +8,9 @@ function ContextProvider({ children }) {
   const [chosenModalPosition, setChosenModalPosition] = useState(
     "absolute self-center"
   );
-  const [chosenModalColor, setChosenModalColor] = useState("bg-primary_orange");
+  const [chosenModalColor, setChosenModalColor] = useState(
+    "bg-primary_purple text-white"
+  );
 
   const [contentsOfModals, setContentsOfModals] = useState({
     Modal1: {
