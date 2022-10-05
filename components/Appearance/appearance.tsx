@@ -1,14 +1,18 @@
-import { useContext } from "react";
+import { bodyStreamToNodeStream } from "next/dist/server/body-streams";
+import { useContext, useState } from "react";
+import { SiTarget } from "react-icons/si";
 import { Context } from "../../context/Context";
 import styles from "./appearance.module.scss";
 
 function Appearance() {
-  const {
-    chosenModalSize,
-    changeChosenModalSize,
-    changeModalPosition,
-    changeChosenModalPosition,
-  } = useContext(Context);
+  const { chosenModalSize, changeChosenModalSize, changeChosenModalPosition } =
+    useContext(Context);
+  const [activePositionButton, setActivePositionButton] = useState("5");
+
+  function handleChange(e) {
+    setActivePositionButton(e.target.name);
+  }
+
   return (
     <div className={styles.appearance}>
       <h3>
@@ -48,49 +52,113 @@ function Appearance() {
       <p>Position</p>
       <div className={styles.cellbox}>
         <button
-          className="rounded-tl"
-          name="absolute top-0 left-0"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="1"
+          className={
+            activePositionButton === "1"
+              ? `${styles.btn__active}  rounded-tl`
+              : "rounded-tl bg-white"
+          }
+          value="absolute top-0 left-0"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className=""
-          name="absolute top-0 self-center"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="2"
+          className={
+            activePositionButton === "2"
+              ? styles.btn__active
+              : styles.btn__inactive
+          }
+          value="absolute top-0 self-center"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className="rounded-tr"
-          name="absolute top-0 right-0"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="3"
+          className={
+            activePositionButton === "3"
+              ? `${styles.btn__active}  rounded-tr`
+              : "rounded-tr bg-white"
+          }
+          value="absolute top-0 right-0"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className=""
-          name="absolute left-0 self-center"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="4"
+          className={
+            activePositionButton === "4" ? styles.btn__active : "bg-white"
+          }
+          value="absolute left-0 self-center"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className=""
-          name="absolute self-center"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="5"
+          className={
+            activePositionButton === "5" ? styles.btn__active : "bg-white"
+          }
+          value="absolute self-center"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className=""
-          name="absolute right-0"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="6"
+          className={
+            activePositionButton === "6" ? styles.btn__active : "bg-white"
+          }
+          value="absolute right-0"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className="rounded-bl"
-          name="absolute bottom-0 left-0 "
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="7"
+          className={
+            activePositionButton === "7"
+              ? `${styles.btn__active}  rounded-bl`
+              : "rounded-bl bg-white"
+          }
+          value="absolute bottom-0 left-0 "
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className=""
-          name="absolute bottom-0 self-center"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="8"
+          className={
+            activePositionButton === "8" ? styles.btn__active : "bg-white"
+          }
+          value="absolute bottom-0 self-center"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
         <button
-          className="rounded-br"
-          name="absolute bottom-0 right-0"
-          onClick={(e) => changeChosenModalPosition(e)}
+          name="9"
+          className={
+            activePositionButton === "9"
+              ? `${styles.btn__active}  rounded-br`
+              : "rounded-br bg-white"
+          }
+          value="absolute bottom-0 right-0"
+          onClick={(e) => {
+            changeChosenModalPosition(e);
+            handleChange(e);
+          }}
         ></button>
       </div>
     </div>
