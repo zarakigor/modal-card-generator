@@ -36,7 +36,7 @@ function Generator() {
           type="text"
           className="form-input mt-4 rounded-lg border-gray-300 "
           name={contentName}
-          value={contentValue}
+          value={`${contentValue}`}
           onChange={(e) => changeChosenModalContents(e, indexOfChosenModal)}
         />
       );
