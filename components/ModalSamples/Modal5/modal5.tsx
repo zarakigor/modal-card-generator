@@ -5,7 +5,7 @@ import { Context } from "../../../context/Context";
 import PrimaryButton from "../../ModalComponents/PrimaryButton/primaryButton";
 
 function Modal5() {
-  const { contentsOfModals } = useContext(Context);
+  const { contentsOfModals, chosenModalColor } = useContext(Context);
 
   return (
     <div className={styles.modal}>
@@ -16,7 +16,7 @@ function Modal5() {
       <PrimaryButton
         value={{
           text: `${contentsOfModals.Modal5.content3}`,
-          className: "w-full ",
+          className: `${chosenModalColor} w-full`,
         }}
       />
     </div>
