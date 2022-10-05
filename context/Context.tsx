@@ -1,7 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 
 const Context = createContext(null);
-//<string | null>
 
 function ContextProvider({ children }) {
   const [indexOfChosenModal, setIndexOfChosenModal] = useState(1);
