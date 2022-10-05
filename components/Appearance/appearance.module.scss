@@ -3,25 +3,36 @@
 
 @layer components {
   .appearance {
-    .cellbox {
+    .positionbox {
       width: 82px;
       height: 55px;
       @apply mt-4 grid grid-cols-3 gap-1;
       button {
         @apply w-6 h-4 border-solid border-2 border-gray-300;
       }
-      button:active,
-      button:focus {
-        background-color: red;
+
+      .btn__active {
+        @apply bg-primary_purple;
+      }
+
+      .btn__inactive {
+        @apply bg-white;
       }
     }
+    .colorbox {
+      @apply mt-4 flex justify-between;
+      button {
+        @apply w-11 h-11 rounded-xl border-2 border-black border-opacity-30;
+      }
+    }
+
     .btn__group {
       background-color: #f5f5f5;
       width: 19rem;
       @apply mt-4 text-sm rounded-xl flex justify-around;
 
       button {
-        @apply px-4 py-3 m-1 rounded-xl font-semibold;
+        @apply px-4 py-3 my-1 mx-0 rounded-xl font-semibold;
       }
 
       .active {
