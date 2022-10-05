@@ -7,11 +7,15 @@ import { useContext } from "react";
 import { Context } from "../../../context/Context";
 
 function Modal1() {
-  const { contentsOfModals } = useContext(Context);
+  const { contentsOfModals, chosenModalColor } = useContext(Context);
   return (
     <div className={styles.modal}>
-      <div className="w-24 h-24 bg-primary_purple rounded-full flex justify-center items-center">
-        <RiShieldStarLine className="w-12 h-12   text-white" />
+      <div
+        className={`${chosenModalColor} w-24 h-24 rounded-full flex justify-center items-center`}
+      >
+        <RiShieldStarLine
+          className={`${chosenModalColor} w-12 h-12 text-white`}
+        />
       </div>
       <h2 className="text-3xl font-bold mt-7 mb-5">
         {contentsOfModals.Modal1.content1}
@@ -33,7 +37,7 @@ function Modal1() {
         <PrimaryButton
           value={{
             text: `${contentsOfModals.Modal1.content5}`,
-            className: "w-6/12",
+            className: `${chosenModalColor} w-6/12`,
           }}
         />
       </div>

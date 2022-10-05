@@ -7,11 +7,15 @@ import PrimaryButton from "../../ModalComponents/PrimaryButton/primaryButton";
 import SecondaryButton from "../../ModalComponents/SecondaryButton/secondaryButton";
 
 function Modal4() {
-  const { contentsOfModals } = useContext(Context);
+  const { contentsOfModals, chosenModalColor } = useContext(Context);
   return (
     <div className={styles.modal}>
-      <div className="w-24 h-24 bg-primary_purple rounded-full flex justify-center items-center">
-        <MdDeleteOutline className="w-12 h-12   text-white" />
+      <div
+        className={`${chosenModalColor} w-24 h-24 rounded-full flex justify-center items-center`}
+      >
+        <MdDeleteOutline
+          className={`${chosenModalColor} w-12 h-12 text-white`}
+        />
       </div>
 
       <h2 className="text-3xl font-bold mt-7 mb-5">
@@ -23,11 +27,11 @@ function Modal4() {
         <span className="text-black"> {contentsOfModals.Modal4.content4}</span>.
       </p>
 
-      <div className="  w-full mt-8">
+      <div className="w-full mt-8">
         <PrimaryButton
           value={{
             text: `${contentsOfModals.Modal4.content5}`,
-            className: "w-full mb-4",
+            className: `${chosenModalColor} w-full mb-4`,
           }}
         />
         <SecondaryButton

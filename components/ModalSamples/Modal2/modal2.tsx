@@ -7,7 +7,7 @@ import PrimaryButton from "../../ModalComponents/PrimaryButton/primaryButton";
 import SecondaryButton from "../../ModalComponents/SecondaryButton/secondaryButton";
 
 function Modal2() {
-  const { contentsOfModals } = useContext(Context);
+  const { contentsOfModals, chosenModalColor } = useContext(Context);
   return (
     <div className={styles.modal}>
       <Image
@@ -28,7 +28,7 @@ function Modal2() {
           <PrimaryButton
             value={{
               text: `${contentsOfModals.Modal2.content3}`,
-              className: "w-full mb-4",
+              className: `${chosenModalColor} w-full mb-4`,
             }}
           />
           <SecondaryButton
