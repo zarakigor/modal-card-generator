@@ -12,9 +12,8 @@ function Generator() {
     indexOfChosenModal,
     changeChosenModalContents,
     contentsOfModals,
-    setContentsOfModals,
-    changeChosenModalPosition,
     chosenModalPosition,
+    chosenModalSize,
   } = useContext(Context);
 
   function loadComponent(index: string) {
@@ -67,8 +66,10 @@ function Generator() {
           <p>Edit your content</p>
           <div className="flex flex-col">{InputElements()}</div>
         </div>
-        <div className="flex justify-center w-3/5 border-solid border-2 border-red-600 relative">
-          <div className={chosenModalPosition}>
+        <div className="flex justify-center w-3/5 relative">
+          <div
+            className={`${chosenModalPosition} ${chosenModalSize} shadow-[0_5px_30px_rgba(0,0,0,0.15)] rounded-xl`}
+          >
             <PreviewModal />
           </div>
         </div>
